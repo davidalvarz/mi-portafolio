@@ -8,14 +8,17 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // ─── Config ─────────────────────────────────────────────────────────────────
-const DASHBOARD_PASSWORD = 'admin'; // ← Cambia esta contraseña
+const DASHBOARD_PASSWORD = process.env.DASHBOARD_PASSWORD || 'admin2024';
 const DATA_DIR     = path.join(__dirname, 'data');
-const UPLOADS_DIR  = path.join(__dirname, 'public', 'uploads');
+const UPLOADS_DIR  = path.join(__dirname, 'data', 'uploads'); // ← dentro de /data (un solo volumen)
 const PROJECTS_F   = path.join(DATA_DIR, 'projects.json');
 const PROFILE_F    = path.join(DATA_DIR, 'profile.json');
 
 // Crear directorios si no existen
 [DATA_DIR, UPLOADS_DIR].forEach(d => { if (!fs.existsSync(d)) fs.mkdirSync(d, { recursive: true }); });
+
+// Servir imágenes desde data/uploads bajo la ruta /uploads
+app.use('/uploads', express.static(UPLOADS_DIR));
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 const read  = (f) => JSON.parse(fs.readFileSync(f, 'utf8'));
@@ -123,7 +126,7 @@ app.delete('/api/projects/:id', auth, (req, res) => {
   const list  = read(PROJECTS_F);
   const found = list.find(p => p.id === req.params.id);
   if (found?.image?.startsWith('/uploads/')) {
-    const fp = path.join(__dirname, 'public', found.image);
+    const fp = path.join(UPLOADS_DIR, path.basename(found.image));
     if (fs.existsSync(fp)) fs.unlinkSync(fp);
   }
   write(PROJECTS_F, list.filter(p => p.id !== req.params.id));
