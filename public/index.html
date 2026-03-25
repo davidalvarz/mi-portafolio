@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Dev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Noise Overlay -->
+  <div class="noise"></div>
+
+  <!-- ── NAVBAR ───────────────────────────────────────── -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo" id="navLogo">dev<span>.</span></div>
+    <ul class="nav__links">
+      <li><a href="#about"    class="nav__link">Sobre mí</a></li>
+      <li><a href="#projects" class="nav__link">Proyectos</a></li>
+      <li><a href="#github"   class="nav__link">GitHub</a></li>
+      <li><a href="#contact"  class="nav__link">Contacto</a></li>
+    </ul>
+    <a href="#contact" class="btn btn--outline nav__cta">Hablemos</a>
+    <button class="nav__burger" id="navBurger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about"    class="mobile-link">Sobre mí</a></li>
+      <li><a href="#projects" class="mobile-link">Proyectos</a></li>
+      <li><a href="#github"   class="mobile-link">GitHub</a></li>
+      <li><a href="#contact"  class="mobile-link">Contacto</a></li>
+    </ul>
+  </div>
+
+  <!-- ── HERO ─────────────────────────────────────────── -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-grid"></div>
+    <div class="hero__orb hero__orb--1"></div>
+    <div class="hero__orb hero__orb--2"></div>
+
+    <div class="hero__content">
+      <div class="hero__badge reveal">
+        <span class="hero__badge-dot"></span>
+        Disponible para proyectos
+      </div>
+      <h1 class="hero__name reveal" id="heroName">NOMBRE</h1>
+      <div class="hero__role reveal">
+        <span class="hero__role-prefix">{ </span>
+        <span class="hero__typewriter" id="typewriter"></span>
+        <span class="hero__cursor-blink"> }</span>
+      </div>
+      <p class="hero__bio reveal" id="heroBio">Bio cargando...</p>
+      <div class="hero__actions reveal">
+        <a href="#projects" class="btn btn--primary">Ver proyectos</a>
+        <a href="#" class="btn btn--ghost" id="cvBtn">Descargar CV</a>
+      </div>
+    </div>
+
+    <div class="hero__socials reveal" id="heroSocials">
+      <!-- Se llenan dinámicamente -->
+    </div>
+
+    <div class="hero__scroll-indicator">
+      <div class="hero__scroll-line"></div>
+      <span>scroll</span>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ─────────────────────────────────────────── -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__tag">01 — Sobre mí</span>
+        <h2 class="section__title">¿Quién soy?</h2>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__image-wrap reveal">
+          <div class="about__image-frame">
+            <img src="" alt="Foto de perfil" class="about__img" id="aboutImg" />
+            <div class="about__image-placeholder" id="aboutImgPlaceholder">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="30" r="16" stroke="currentColor" stroke-width="2"/>
+                <path d="M10 72c0-16.569 13.431-30 30-30s30 13.431 30 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="about__image-tag" id="aboutLocation"></div>
+          </div>
+        </div>
+
+        <div class="about__text">
+          <p class="about__bio reveal" id="aboutBio">Cargando...</p>
+          <div class="about__info reveal" id="aboutInfo"></div>
+
+          <div class="about__skills reveal">
+            <h3 class="about__skills-title">Stack & Tecnologías</h3>
+            <div class="skills-grid" id="skillsGrid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ──────────────────────────────────────── -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__tag">02 — Proyectos</span>
+        <h2 class="section__title">Trabajo reciente</h2>
+      </div>
+
+      <div class="projects__filters reveal" id="projectFilters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+      </div>
+
+      <div class="projects__grid" id="projectsGrid">
+        <!-- Cards dinámicas -->
+      </div>
+
+      <div class="projects__empty hidden" id="projectsEmpty">
+        <p>No hay proyectos publicados aún.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GITHUB ────────────────────────────────────────── -->
+  <section class="section github-section" id="github">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__tag">03 — GitHub</span>
+        <h2 class="section__title">Actividad open source</h2>
+      </div>
+
+      <div class="github__grid" id="githubGrid">
+        <div class="github__profile-card reveal" id="githubProfile">
+          <div class="skeleton-box" style="height:200px"></div>
+        </div>
+        <div class="github__repos reveal" id="githubRepos">
+          <div class="skeleton-box" style="height:200px"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ───────────────────────────────────────── -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__tag">04 — Contacto</span>
+        <h2 class="section__title">Trabajemos juntos</h2>
+      </div>
+
+      <div class="contact__grid">
+        <div class="contact__info reveal">
+          <p class="contact__text" id="contactEmail">Cargando...</p>
+          <div class="contact__socials" id="contactSocials"></div>
+        </div>
+
+        <form class="contact__form reveal" id="contactForm">
+          <div class="form-group">
+            <label for="formName">Nombre</label>
+            <input type="text" id="formName" placeholder="Tu nombre" required />
+          </div>
+          <div class="form-group">
+            <label for="formEmail">Email</label>
+            <input type="email" id="formEmail" placeholder="tu@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="formMsg">Mensaje</label>
+            <textarea id="formMsg" rows="5" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">
+            Enviar mensaje
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+          <p class="form-note">* El formulario abrirá tu cliente de correo</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__logo" id="footerLogo">dev<span>.</span></div>
+      <p class="footer__copy" id="footerCopy">© 2026 — Todos los derechos reservados por el creador</p>
+      <a href="/dashboard" class="footer__admin">Admin</a>
+    </div>
+  </footer>
+
+  <!-- ── PROJECT MODAL ─────────────────────────────────── -->
+  <div class="modal-overlay" id="projectModal">
+    <div class="modal">
+      <button class="modal__close" id="modalClose">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal__content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

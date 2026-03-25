@@ -1,0 +1,24 @@
+{
+  "name": "David Alvarez",
+  "role": "Desarrollador Full Stack",
+  "bio": "Apasionado por crear experiencias digitales únicas y funcionales. Me especializo en desarrollo web, arquitecto de Software, base de datos y Scripter.",
+  "email": "davidalvarez0206@gmail.com",
+  "location": "Montevideo, Uruguay",
+  "avatar": "/uploads/1774400921235-yhe4bxjq09.jpg",
+  "github": "davidalvarz",
+  "linkedin": "tu-perfil",
+  "twitter": "",
+  "cvUrl": "",
+  "skills": [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Node.js",
+    "Python",
+    "PostgreSQL",
+    "MongoDB",
+    "Docker",
+    "Git",
+    "CSS / Tailwind"
+  ]
+}

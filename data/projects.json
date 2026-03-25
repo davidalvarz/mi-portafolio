@@ -1,0 +1,43 @@
+[
+  {
+    "id": "1",
+    "title": "Aurea",
+    "description": "Red Social",
+    "longDesc": "Aurea, desarrollada por Aurea Corporations, es una plataforma web full-stack diseñada como una red social moderna de alto nivel, inspirada en la experiencia visual e interacción de aplicaciones como Instagram, pero con un enfoque más profesional, escalable y tecnológicamente robusto.",
+    "technologies": [
+      "React",
+      "Node.js",
+      "Tailwind CSS",
+      "PostgreSQL"
+    ],
+    "githubUrl": "https://github.com/davidalvarz/Aurea-Corporation",
+    "liveUrl": "https://demo.com",
+    "image": "/uploads/1774401351027-bah7wknroh8.jpg",
+    "published": true,
+    "featured": true,
+    "order": 0,
+    "createdAt": "2024-01-15T00:00:00.000Z",
+    "updatedAt": "2026-03-25T01:49:39.196Z"
+  },
+  {
+    "id": "2",
+    "title": "Task Manager API",
+    "description": "API REST para gestión de tareas con autenticación JWT y roles.",
+    "longDesc": "API completa para gestión de proyectos y tareas. Construida con Express.js y PostgreSQL. Implementa autenticación JWT, roles de usuario, notificaciones en tiempo real con WebSockets.",
+    "technologies": [
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "JWT",
+      "WebSockets"
+    ],
+    "githubUrl": "https://github.com/tu-usuario/taskmanager",
+    "liveUrl": "",
+    "image": "",
+    "published": false,
+    "featured": false,
+    "order": 1,
+    "createdAt": "2024-02-10T00:00:00.000Z",
+    "updatedAt": "2026-03-25T01:54:39.288Z"
+  }
+]
